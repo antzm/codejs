@@ -38,3 +38,22 @@ If though we would like to create a playlist with several videos, then an altern
 
 
 ## Embeding YouTube videos dynamically
+
+First of all, we will need to create an array containing the ID's of the videos that we would like to embed. This array should also contain the titles of the videos, as it's not easy to obtain dynamically the title of a video using it's ID. 
+
+Thus, the array should be something like this:
+
+```javascript
+const myCollection = [
+	["Title 1", "ViDeOiD_1"],
+	["Title 2", "ViDeOiD_2"],
+	["Title 3", "ViDeOiD_3"]
+];
+```
+In our HTML code, we should also include a `<section>` or a `<div>` where we plan to append the dynamically created content. For ecxample:
+
+```HTML
+<section class="embeded-videos"></section>
+```
+The name of the class used in this `<section>`, should be unique and it should only be used at this point in our code. Obviously, should we wish, we may add as many classes as we want in this `<section>`, but the class that will be used to append the dynamically created content should be unique. There's no need to use an ID in our codem as long as we remember that the class name should only be used once.
+
