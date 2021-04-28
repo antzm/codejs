@@ -57,3 +57,22 @@ In our HTML code, we should also include a `<section>` or a `<div>` where we pla
 ```
 The name of the class used in this `<section>`, should be unique and it should only be used at this point in our code. Obviously, should we wish, we may add as many classes as we want in this `<section>`, but the class that will be used to append the dynamically created content should be unique. There's no need to use an ID in our codem as long as we remember that the class name should only be used once.
 
+Then, in order to avoid multiple updates of the document object, we could create a temporary document fragment which we will use to stote the content we create. Only when the creation of our content has been completed, then we will update the document object with our new content.
+
+**Creating a temporary document fragment**
+
+```javascript
+const contentFragment = document.createDocumentFragment();
+```
+
+To better understand the process, we create an iframe with our first video:
+
+```javascript
+		const videoFrame = document.createElement('iframe');
+		videoFrame.className = 'video-frame';
+		videoFrame.width = "916";
+		videoFrame.height = "515";
+		videoFrame.src = "https://www.youtube.com/embed/" + videoList[0][1];
+		videoFrame.setAttribute( "frameborder", "0" );
+		videoFrame.setAttribute( "allowfullscreen", "");	
+```
