@@ -65,7 +65,16 @@ Then, in order to avoid multiple updates of the document object, we could create
 const contentFragment = document.createDocumentFragment();
 ```
 
-To better understand the process, we create an iframe with our first video:
+To better understand the process, we create an iframe with our first video.
+
+This will be done in two steps. First, we create a header with the title of the video
+
+```javascript
+		const videoHeader = document.createElement('h1');
+		videoHeader.className = 'video-title';
+		videoHeader.innerHTML = videoList[0][0];
+````
+And then, we create the iframe tag which will contain the Youtube video:
 
 ```javascript
 		const videoFrame = document.createElement('iframe');
