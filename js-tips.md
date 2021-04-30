@@ -44,7 +44,7 @@ First of all, we will need to create an array containing the ID's of the videos 
 Thus, the array should be something like this:
 
 ```javascript
-const myCollection = [
+const videoList = [
 	["Title 1", "ViDeOiD_1"],
 	["Title 2", "ViDeOiD_2"],
 	["Title 3", "ViDeOiD_3"]
@@ -84,4 +84,48 @@ And then, we create the iframe tag which will contain the Youtube video:
 		videoFrame.src = "https://www.youtube.com/embed/" + videoList[0][1];
 		videoFrame.setAttribute( "frameborder", "0" );
 		videoFrame.setAttribute( "allowfullscreen", "");	
+```
+
+And now, we use a for loop to create the content for all the video headers and all the video iframes. That content is added to the document fragment and when the process is completed, then we udate the document object with the new content:
+
+```javascript
+	
+	const videoList = [
+		["Title 1", "ViDeOiD_1"],
+		["Title 2", "ViDeOiD_2"],
+		["Title 3", "ViDeOiD_3"]
+	];
+
+	// First, we create a fragment to temporarily store our new html content
+	// this way, we avoid to update the document object with every iteration
+	const contentFragment = document.createDocumentFragment();
+
+
+	for (let i = 0; i < videoList.length; i++) {
+
+		// For each video we create a header tag
+		const videoHeader = document.createElement('h1');
+		videoHeader.className = 'video-title';
+		videoHeader.innerHTML = videoList[i][0];
+
+		// For each video we create an iframe tag
+		const videoFrame = document.createElement('iframe');
+		videoFrame.className = 'video-info';
+		videoFrame.width = "916";
+		videoFrame.height = "515";
+		videoFrame.src = "https://www.youtube.com/embed/" + videoList[i][1];
+		videoFrame.setAttribute( "frameborder", "0" );
+		videoFrame.setAttribute( "allowfullscreen", "");		
+
+		// For each video we append the tags to the fragment
+		contentFragment.appendChild(videoHeader);
+		contentFragment.appendChild(videoFrame);
+	}
+
+	// And finally, we update the html page with our new content.
+	// (Obviously, there should be a <main class="main-content">
+	// tag in our html code in order to apeend our content on it)
+	const updatedContent = document.querySelector('.main-content');
+	updatedContent.appendChild(contentFragment);
+
 ```
