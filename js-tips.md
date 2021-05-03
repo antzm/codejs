@@ -145,3 +145,20 @@ Again, we start with an array that conntains the YouTube videoID's that we would
 		["Title 3", "ViDeOiD_3"]
 	];
 ```
+Then, we need to create a function that will combine those video ids into a playlist.
+
+```javascript
+
+function createPlaylist() {
+	// the format of the playlist would be
+	// ?playlist=ViDeOiD_1,ViDeOiD_2,ViDeOiD_3
+	let buildList = "?playlist="
+	for (let i = 0; i < videoList.length; i++) {
+		buildList += videoList[i][1] + ",";
+	}
+	// we remove the last comma from the playlist
+	buildList = buildList.slice(0, -1);
+	return buildList;
+}
+
+```
