@@ -162,3 +162,36 @@ function createPlaylist() {
 }
 
 ```
+
+And finally, we create our content:
+
+```javascript
+	// Again, we create a fragment to temporarily store our new html content
+	// this way, we avoid to update the document object with every iteration
+	const contentFragment = document.createDocumentFragment();
+
+	// We create a header for the iframe
+	const playlistVideoHeader = document.createElement('h1');
+	playlistVideoHeader.className = 'video-title';
+	playlistVideoHeader.innerHTML = " YouTube Playlist of " + videoList.length + " videos)";
+
+	// Then, we create the iframe tag
+	const playlistVideoFrame = document.createElement('iframe');
+	playlistVideoFrame.className = 'video-info';
+	playlistVideoFrame.width = "916";
+	playlistVideoFrame.height = "515";
+	playlistVideoFrame.src = "https://www.youtube.com/embed/" + createPlaylist();
+	playlistVideoFrame.setAttribute("frameborder", "0" );
+	playlistVideoFrame.setAttribute("allowfullscreen", "");		
+
+	// Then, we append the tags to the fragment
+	contentFragment.appendChild(playlistVideoHeader);
+	contentFragment.appendChild(playlistVideoFrame);
+
+	// And finally, we update the html page with our new content.
+	// (Obviously, there should be a <main class="main-content">
+	// tag in our html code in order to apeend our content on it)
+	const updatedContent = document.querySelector('.main-content');
+	updatedContent.appendChild(contentFragment);
+
+```
