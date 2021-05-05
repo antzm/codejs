@@ -195,3 +195,30 @@ And finally, we create our content:
 	updatedContent.appendChild(contentFragment);
 
 ```
+
+This code though, will always create the exact same playlist based on the order of the video ids in the original array.
+
+Should we wish to randomize the playlist, so that every time the code runs a different random playlist will be created, then we need to create a function that will first randomize the intitial array before creating the playlist.
+
+One approach to randomize an array, would be the following:
+
+```javascript
+
+function randomizeArray(randArray) {
+	let firstElement = 0;
+	for (let i = 0; i < randArray.length; i++) {
+		firstElement = randArray[0];
+		randArray.splice(0,1);
+		randArray.splice(randomNum(randArray.length), 0, firstElement);
+	};
+	return randArray;
+}
+
+
+function randomNum(max) {
+	let randNum = Math.floor(Math.random()*(max+1));
+	return randNum;
+}
+
+````
+
