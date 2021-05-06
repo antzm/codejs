@@ -204,6 +204,11 @@ One approach to randomize an array, would be the following:
 
 ```javascript
 
+// In this approach, we remove the first item of the array
+// and then, we place back the item in a ranodm position inside the array
+// and for this process we use another function that returns
+// a random position where we will place that item,
+// and process is repaetad for every item of the array.
 function randomizeArray(randArray) {
 	let firstElement = 0;
 	for (let i = 0; i < randArray.length; i++) {
@@ -214,7 +219,7 @@ function randomizeArray(randArray) {
 	return randArray;
 }
 
-
+// This function returns a random number between 0 and max (max included)
 function randomNum(max) {
 	let randNum = Math.floor(Math.random()*(max+1));
 	return randNum;
