@@ -196,7 +196,9 @@ And finally, we create our content:
 
 ```
 
-This code though, will always create the exact same playlist based on the order of the video ids in the original array.
+## Randomizing the video playlist
+
+The above code though, will always create the exact same playlist based on the order of the video ids in the original array.
 
 Should we wish to randomize the playlist, so that every time the code runs a different random playlist will be created, then we need to create a function that will first randomize the intitial array before creating the playlist.
 
@@ -226,4 +228,17 @@ function randomNum(max) {
 }
 
 ````
+So now, we only need to call the "randomizeArray" to randomize our array.
 
+Thus, we only need to change the first lines of our code:
+
+```javascript
+const videoList = [
+		["Title 1", "ViDeOiD_1"],
+		["Title 2", "ViDeOiD_2"],
+		["Title 3", "ViDeOiD_3"]
+	];
+
+videoList = randomizeArray(videoList);
+
+```
