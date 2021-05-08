@@ -242,3 +242,26 @@ const videoList = [
 videoList = randomizeArray(videoList);
 
 ```
+
+## Updating the content dynamically
+
+Another approach is to create dynamically, multiple videos or multiple playlists that will have some common content.
+
+This can be accomplished by creating e.g., 5 button on our page and by clicking each button, another category of videos will appear.
+
+To do this, we should first start by creating the button in HTML and then to style those buuton using CSS.
+
+Thus, the HTML code could be like this:
+
+```html
+
+	<ul class='button-group'>
+		<li><button class='buttons button-1' type='button'>Album 1</button></li>
+		<li><button class='buttons button-2' type='button'>Album 2</button></li>
+		<li><button class='buttons button-3' type='button'>Album 3</button></li>
+		<li><button class='buttons button-4' type='button'>Album 4</button></li>
+		<li><button class='buttons button-5' type='button'>Album 5</button></li>
+	</ul>
+
+```
+
