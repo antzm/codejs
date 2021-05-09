@@ -265,3 +265,35 @@ Thus, the HTML code could be like this:
 
 ```
 
+And we also need to format the appearance of the buttons using CSS as the example below:
+
+```css
+		.button-group {
+			margin-top: 25px;
+			padding-top: 25px;
+			text-align: center;
+			list-style-type: none;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		.buttons {
+			text-align: center;
+			display: inline-block;
+			background-color: #3498db;
+			border: 1px solid #337fed;
+			color: #ebf5fb;
+			font-family: Arial;
+			font-size: 15px;
+			font-weight: bold;
+			padding: 6px 24px;
+			margin: 3px;
+			outline: none;
+			text-decoration: none;
+			text-shadow: 0px 1px 0px #1570cd;
+			border-radius: 4px;
+		}
+```
+As we can see, we have created a flex container for the buttons while each button is displayed as an inline-block
