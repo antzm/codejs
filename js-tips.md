@@ -297,3 +297,10 @@ And we also need to format the appearance of the buttons using CSS as the exampl
 		}
 ```
 As we can see, we have created a flex container for the buttons while each button is displayed as an inline-block
+
+Besides that though, we should also enable the buutons to perform the required actions.
+
+The usual approach is to add one event listener to each button that will monitor if the button is pressed and when the button is pressed, the corresponding JavaScript code will be executed.
+
+A simplified approach though is to add only one event listener for all the buttons and then to monitor which button was pressed. This can be acomplished by using the "evt" parameter which is fired every time a button is presed and based on the value of the "evt" parameter, we are able to detrmnine which buttons was pressed and then to run the corrsponding JavaScript code.
+
