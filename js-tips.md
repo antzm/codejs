@@ -10,29 +10,29 @@ The easiest way to check whether a video can be ebmeded or not, is to copy-paste
 
 Then, when opening this file on a web browser, we can click on the YouTube video and if it can be embeded, the video will start playing and so we can proceed further and incude it on our site. Otherwise, we will get a message that the video cannot be played and instead, we should watch it on YouTube.
 
-Let's assume now that we have three Youtube videos (e.g. ViDeOiD_1, ViDeOiD_2, ViDeOiD_3), which can be embeded,  and we would like to embed those videos in our personal site. Actually, this is something very easy as we can right click on any Youtube video (while playing) and select "copy embed code" and then copy paste that code into our own web page, like the following example.
+Let's assume now that we have three Youtube videos (e.g. videoId_1, videoId_2, videoId_3), which can be embeded,  and we would like to embed those videos in our personal site. Actually, this is something very easy as we can right click on any Youtube video (while playing) and select "copy embed code" and then copy paste that code into our own web page, like the following example.
 
 ```html
-<iframe width="916" height="515" src="https://www.youtube.com/embed/ViDeOiD_1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="916" height="515" src="https://www.youtube.com/embed/videoId_1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
 But how are we going to embed three videos? Well, the obvious way is to embed the code for each video but this will create three iframe winfows on our site, like the following approach.
 
 ```html
-<iframe width="916" height="515" src="https://www.youtube.com/embed/ViDeOiD_1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="916" height="515" src="https://www.youtube.com/embed/videoId_1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe width="916" height="515" src="https://www.youtube.com/embed/ViDeOiD_2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="916" height="515" src="https://www.youtube.com/embed/videoId_2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe width="916" height="515" src="https://www.youtube.com/embed/ViDeOiD_3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="916" height="515" src="https://www.youtube.com/embed/videoId_3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ```
 
 But maybe we would rather avoid  an approach with three iframe windows.In such a case, the only way is to create just one iframe window and to include all three videos as a playlist by using the following approach:
 
-Changing the `...embed/ViDeOiD_1` with `embed/?playlist=ViDeOiD_1,ViDeOiD_2,ViDeOiD_3`
+Changing the `...embed/videoId_1` with `embed/?playlist=videoId_1,videoId_2,videoId_3`
 
 ```html
-<iframe width="916" height="515" src="https://www.youtube.com/embed/?playlist=ViDeOiD_1,ViDeOiD_2,ViDeOiD_3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="916" height="515" src="https://www.youtube.com/embed/?playlist=videoId_1,videoId_2,videoId_3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 If though we would like to create a playlist with several videos, then an alternative way would be to create both the iframe and the playlist dynamically using JavaScript.
 
@@ -45,9 +45,9 @@ Thus, the array should be something like this:
 
 ```javascript
 const videoList = [
-	["Title 1", "ViDeOiD_1"],
-	["Title 2", "ViDeOiD_2"],
-	["Title 3", "ViDeOiD_3"]
+	["Title 1", "videoId_1"],
+	["Title 2", "videoId_2"],
+	["Title 3", "videoId_3"]
 ];
 ```
 In our HTML code, we should also include a `<section>` or a `<div>` where we plan to append the dynamically created content. For ecxample:
@@ -91,9 +91,9 @@ And now, we use a for loop to create the content for all the video headers and a
 ```javascript
 	
 	const videoList = [
-		["Title 1", "ViDeOiD_1"],
-		["Title 2", "ViDeOiD_2"],
-		["Title 3", "ViDeOiD_3"]
+		["Title 1", "videoId_1"],
+		["Title 2", "videoId_2"],
+		["Title 3", "videoId_3"]
 	];
 
 	// First, we create a fragment to temporarily store our new html content
@@ -136,13 +136,13 @@ Whenever we would like to embed several YouTube videos in a single page, the pro
 
 A more efficient aproach though, is to use only one iframe in each page and to include a custom made playlist in that iframe. This way, the resources needed will be kept to a minimum and also, the time needed for the initial content of the iframe to be loaded, would be almost instantaneously.
 
-Again, we start with an array that conntains the YouTube videoID's that we would like to embed in our web page.
+Again, we start with an array that conntains the YouTube videoId's that we would like to embed in our web page.
 
 ```javascript
 	const videoList = [
-		["Title 1", "ViDeOiD_1"],
-		["Title 2", "ViDeOiD_2"],
-		["Title 3", "ViDeOiD_3"]
+		["Title 1", "videoId_1"],
+		["Title 2", "videoId_2"],
+		["Title 3", "videoId_3"]
 	];
 ```
 Then, we need to create a function that will combine those video ids into a playlist.
@@ -151,7 +151,7 @@ Then, we need to create a function that will combine those video ids into a play
 
 function createPlaylist() {
 	// the format of the playlist would be
-	// ?playlist=ViDeOiD_1,ViDeOiD_2,ViDeOiD_3
+	// ?playlist=videoId_1,videoId_2,videoId_3
 	let buildList = "?playlist="
 	for (let i = 0; i < videoList.length; i++) {
 		buildList += videoList[i][1] + ",";
@@ -234,9 +234,9 @@ Thus, we only need to change the first lines of our code:
 
 ```javascript
 const videoList = [
-		["Title 1", "ViDeOiD_1"],
-		["Title 2", "ViDeOiD_2"],
-		["Title 3", "ViDeOiD_3"]
+		["Title 1", "videoId_1"],
+		["Title 2", "videoId_2"],
+		["Title 3", "videoId_3"]
 	];
 
 videoList = randomizeArray(videoList);
