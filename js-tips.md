@@ -304,3 +304,38 @@ The usual approach is to add one event listener to each button that will monitor
 
 A simplified approach though is to add only one event listener for all the buttons and then to monitor which button was pressed. This can be acomplished by using the "evt" parameter which is fired every time a button is presed and based on the value of the "evt" parameter, we are able to detrmnine which buttons was pressed and then to run the corrsponding JavaScript code.
 
+So, here's the code to add the event listener to the buttons:
+
+```javascript
+
+// This function adds the event listener to the buttons
+function enableListener() {
+
+	const buttonListener = document.querySelector('.button-group');
+	buttonListener.addEventListener('click', activateButtons);
+}
+
+```
+
+And this is the function, which performs the corresponding code depending on which button has been pressed
+
+```javascript
+
+// This function uses the evt parameter,
+// which is automatically transmitted whenever
+// a button is clicked
+// and depending on the evt value
+// the corresponding array for each album
+// is selected, the album button is highlighted
+// and the page content is created
+function activateButtons(evt) {
+
+	if (evt.target.classList.contains('button-1')) {
+		videoList = album1;
+		selectButton('.button-1');
+		createContent();
+	}
+}
+
+```
+
