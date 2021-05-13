@@ -339,3 +339,22 @@ function activateButtons(evt) {
 
 ```
 
+At the same time, we should highlight the color of the button that was pressed and this is done with the following code:
+
+```javascript
+
+// When a button is pressed, its color changes
+function selectButton(button) {
+
+	// First, we set all buttons to their default style
+	const selectedButtons = document.querySelectorAll('.buttons');
+	for (i = 0; i < selectedButtons.length; i++) {
+		selectedButtons[i].classList.remove('button-selected');
+	}
+
+	// Then, we change the style of the newly selected button
+	const pressedButton = document.querySelector(button);
+	pressedButton.classList.add('button-selected');
+}
+
+```
