@@ -358,3 +358,18 @@ function selectButton(button) {
 }
 
 ```
+
+The above highlighting of the buttons, uses this sample CSS code for the bitton classes:
+
+```css
+
+		.buttons:hover {
+			background-color: #5dade2;
+			color: #21618c;
+		}
+
+		.button-selected {
+			background-color: #85c1e9;
+			color: #21618c;
+		}
+```
