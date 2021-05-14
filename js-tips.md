@@ -320,6 +320,13 @@ function enableListener() {
 And this is the function, which performs the corresponding code depending on which button has been pressed
 
 ```javascript
+const album1 = [
+		["Title x", "videoId_x"],
+		["Title y", "videoId_y"],
+		["Title z", "videoId_z"]
+	];
+
+
 
 // This function uses the evt parameter,
 // which is automatically transmitted whenever
