@@ -130,7 +130,7 @@ And now, we use a for loop to create the content for all the video headers and a
 
 ```
 
-## Embeding YouTube videos, to a custom playlist, dynamically
+## Embeding YouTube videos, into a custom playlist, dynamically
 
 Whenever we would like to embed several YouTube videos in a single page, the process will use too much resources due to the many `iframe` windows that will be created and also, it will take a longer time for all those iframes to load their initial content and become active.
 
@@ -346,6 +346,8 @@ function activateButtons(evt) {
 
 ```
 
+## Styling the buttons
+
 At the same time, we should highlight the color of the button that was pressed and this is done with the following code:
 
 ```javascript
@@ -353,20 +355,25 @@ At the same time, we should highlight the color of the button that was pressed a
 // When a button is pressed, its color changes
 function selectButton(button) {
 
-	// First, we set all buttons to their default style
+	// First, we set all buttons to their default style.
+	// This is done by selecting all the tags with the class "buttons"
+	// and then we loop through all those button tags and we
+	// remove the class "button-selected" from each one of them.
 	const selectedButtons = document.querySelectorAll('.buttons');
 	for (i = 0; i < selectedButtons.length; i++) {
 		selectedButtons[i].classList.remove('button-selected');
 	}
 
 	// Then, we change the style of the newly selected button
+	// by adding the class "button-selected" to the button
+	// that was pressed.
 	const pressedButton = document.querySelector(button);
 	pressedButton.classList.add('button-selected');
 }
 
 ```
 
-The above highlighting of the buttons, uses this sample CSS code for the bitton classes:
+The above highlighting of the buttons, uses this sample CSS code for the button classes:
 
 ```css
 
@@ -380,3 +387,6 @@ The above highlighting of the buttons, uses this sample CSS code for the bitton 
 			color: #21618c;
 		}
 ```
+
+The proper approach to handle the styling of the buttons, is to create a class for every style that our buttons could possible have, and then using our JavaScript code, we add or remove certain classes from the buttons in order to achive the appearance we would like to accomplish.
+
