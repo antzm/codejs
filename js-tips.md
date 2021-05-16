@@ -321,12 +321,19 @@ And this is the function, which performs the corresponding code depending on whi
 
 ```javascript
 const album1 = [
+		["Title a", "videoId_a"],
+		["Title b", "videoId_b"],
+		["Title c", "videoId_c"]
+	];
+
+const album2 = [
 		["Title x", "videoId_x"],
 		["Title y", "videoId_y"],
 		["Title z", "videoId_z"]
 	];
 
-
+	// the rest of the album arrays,
+	// where each album contain a playlist
 
 // This function uses the evt parameter,
 // which is automatically transmitted whenever
@@ -342,6 +349,14 @@ function activateButtons(evt) {
 		selectButton('.button-1');
 		createContent();
 	}
+
+		if (evt.target.classList.contains('button-2')) {
+		videoList = album2;
+		selectButton('.button-2');
+		createContent();
+	}
+
+	// the code for the rest of the buttons...
 }
 
 ```
