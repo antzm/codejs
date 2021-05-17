@@ -1,5 +1,14 @@
 # JavaScript Tips
 
+** Index **
+
+* [Embeding a YouTube video on our personal site](#Embeding-a-YouTube-video-on-our-personal-site)
+* [Embeding individual YouTube videos dynamically](#Embeding-individual-YouTube-videos-dynamically)
+* [Embeding YouTube videos, into a custom playlist, dynamically](#Embeding-YouTube-videos,-into-a-custom-playlist,-dynamically)
+* [Updating the content dynamically](#Updating-the-content-dynamically)
+* [Styling the buttons](#Styling-the-buttons)
+
+
 ## Embeding a YouTube video on our personal site
 
 First of all, it should be noted that only some videos are allowed to be embeded, as the owner of each YouTube channle has the option either to allow the embeding of their videos or not. In general though, the most famous and succefull YouTube channels, don't allow to embeding their videos.
@@ -404,4 +413,3 @@ The above highlighting of the buttons, uses this sample CSS code for the button 
 ```
 
 The proper approach to handle the styling of the buttons, is to create a class for every style that our buttons could possible have, and then using our JavaScript code, we add or remove certain classes from the buttons in order to achive the appearance we would like to accomplish.
-
