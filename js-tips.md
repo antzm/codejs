@@ -45,6 +45,8 @@ Changing the `...embed/videoId_1` with `embed/?playlist=videoId_1,videoId_2,vide
 ```
 If though we would like to create a playlist with several videos, then an alternative way would be to create both the iframe and the playlist dynamically using JavaScript.
 
+*[index](#JavaScript-Tips)*
+
 
 ## Embeding individual YouTube videos dynamically
 
@@ -139,6 +141,8 @@ And now, we use a for loop to create the content for all the video headers and a
 
 ```
 
+*[index](#JavaScript-Tips)*
+
 ## Embeding YouTube videos, into a custom playlist, dynamically
 
 Whenever we would like to embed several YouTube videos in a single page, the process will use too much resources due to the many `iframe` windows that will be created and also, it will take a longer time for all those iframes to load their initial content and become active.
@@ -205,6 +209,9 @@ And finally, we create our content:
 
 ```
 
+*[index](#JavaScript-Tips)*
+
+
 ## Randomizing the video playlist
 
 The above code though, will always create the exact same playlist based on the order of the video ids in the original array.
@@ -251,6 +258,9 @@ const videoList = [
 videoList = randomizeArray(videoList);
 
 ```
+
+*[index](#JavaScript-Tips)*
+
 
 ## Updating the content dynamically
 
@@ -369,6 +379,8 @@ function activateButtons(evt) {
 }
 
 ```
+
+*[index](#JavaScript-Tips)*
 
 ## Styling the buttons
 
