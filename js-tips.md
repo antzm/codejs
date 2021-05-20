@@ -424,4 +424,6 @@ The above highlighting of the buttons, uses this sample CSS code for the button 
 		}
 ```
 
-The proper approach to handle the styling of the buttons, is to create a class for every style that our buttons could possible have, and then using our JavaScript code, we add or remove certain classes from the buttons in order to achive the appearance we would like to accomplish.
+The proper approach to handle the styling of the buttons, is to create a class for every style that our buttons could possible have, and then using our JavaScript code, we add or remove certain classes from the buttons in order to achieve the appearance we would like to accomplish.
+
+The number of buttons could be easily increased or decreased, based on our preferences, and to avoid tooo many button appearing in a slingle row, the buttons are arranged using `flex` so whenever needed, they will be extended in two or more lines.

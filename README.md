@@ -13,3 +13,5 @@ e.g.,
 * Updating the content of our page dynamically
 
 e.t.c.
+
+*Note that the option to embed a YouTube video depends solely on the YouTube channel owner, who may enable or disable this option*
