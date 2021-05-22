@@ -15,3 +15,10 @@ e.g.,
 e.t.c.
 
 *Note that the option to embed a YouTube video depends solely on the YouTube channel owner, who may enable or disable this option*
+
+
+The repository also includes information and code on how to organize your local MP4 videos, and more specifically information about:
+
+* How to group your video filenames into JavaScript arrays for easy playback
+* How to easily create those JavaScipt arrays using your video filenames
+* Either organize the video playback in a specific order or in a random order
