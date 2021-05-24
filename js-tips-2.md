@@ -39,4 +39,14 @@ print(video_list, file=my_file)
 
 ```
 
+Now, this code will give us a Python list and just by placing a semicolon at the end of the list, we will have a JavaScript array which will be used in our code, as our code consists of HTML, CSS and JavaScript.
 
+We used Python as this is the easiest way to create a list or an array with all the filenames in a folder.
+
+Now, if we don't have Python installed in our computer, we could obviously use a simpler but more time consuming approach. Besides creating the JavaScript array by hand, we could also use some tricks in a computer with Windows 10. 
+
+* In any folder, we can select the files we are interested and then, while pressing the "Shift" key, we can right-click our mouse and select the option "copy path" which will copy the complete path of every file we had selected.
+
+* Then, in text editor we are familiar with, or even by using Word, we can select the column with the path of the files and delete it, while keeping only the names of the files. Selecting a column of text depends on the text editor we are using, while in Word we can select a column of text by pressing the "Alt" key and while pressing it, to use our mouse and select a column of text, which we will selete after, so to keep only the filenames.
+
+Then, we use the filenames to create a JavaScript array which will be used in our code.
