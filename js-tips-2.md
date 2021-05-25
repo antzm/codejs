@@ -50,3 +50,52 @@ Now, if we don't have Python installed in our computer, we could obviously use a
 * Then, in text editor we are familiar with, or even by using Word, we can select the column with the path of the files and delete it, while keeping only the names of the files. Selecting a column of text depends on the text editor we are using, while in Word we can select a column of text by pressing the "Alt" key and while pressing it, to use our mouse and select a column of text, which we will selete after, so to keep only the filenames.
 
 Then, we use the filenames to create a JavaScript array which will be used in our code.
+
+Let's assume that this is our array with all the videos:
+
+```javascript
+
+const videoList = [
+	"video00.mp4",
+	"video01.mp4",
+	"video02.mp4",
+	"video03.mp4",
+	"video04.mp4",
+	"video05.mp4",
+	"video06.mp4",
+	"video07.mp4",
+	"video08.mp4",
+	"video09.mp4"
+];
+
+```
+
+So now, we can use this array and build our html page with all these videos:
+
+```javascript
+
+	// First, we create a fragment to temporarily store our new html content
+	// this way, we avoid to update the document object with every iteration
+	const contentFragment = document.createDocumentFragment();
+
+	for (i = 0; i < videoList.length; i++) {
+
+		// For each video we create a header tag
+		const videoHeader = document.createElement('h1');
+		videoHeader.className = 'video-title';
+		videoHeader.innerHTML = videoList[i].slice(0, -4);
+
+		// For each video we create a video tag
+		const videoDetails = document.createElement('video');
+		videoDetails.className = 'video-info';
+		videoDetails.width = 986;  // As an example
+		videoDetails.height = 553; // As an example
+		videoDetails.controls = true;
+		videoDetails.src = videoList[i];
+		videoDetails.setAttribute("type", "video/mp4");
+
+		// For each video we append the tags to the fragment
+		contentFragment.appendChild(videoHeader);
+		contentFragment.appendChild(videoDetails);
+	}
+```
