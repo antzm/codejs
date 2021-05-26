@@ -99,3 +99,24 @@ So now, we can use this array and build our html page with all these videos:
 		contentFragment.appendChild(videoDetails);
 	}
 ```
+And then, we append this document fragment to our existing html code:
+
+```javascript
+
+	// And finally, we update the html page with our new content
+	const updatedContent = document.querySelector('.main-content');
+	updatedContent.appendChild(contentFragment);
+
+```
+While our html code would be something like the following:
+
+```html
+
+<main class="main-content">
+
+	<div class="video-title"></div>
+	<div class="video-info"></div>
+
+</main>
+
+```
