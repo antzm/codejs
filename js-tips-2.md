@@ -120,3 +120,30 @@ While our html code would be something like the following:
 </main>
 
 ```
+
+## Using several arrays in our code
+
+If we would to use more than 1 array in our code, then we should be able to select which array we would like to use each time by pressing e.g., a button.
+
+Let's consider the case where we have 5 arrays and so we should have 5 buttons in our code.
+
+The html code for our buttons could be something like this:
+
+```html
+
+<nav id='top'>
+
+	<ul class='button-group'>
+		<li><button class='buttons button-1' type='button'>Videos 1</button></li>
+		<li><button class='buttons button-2' type='button'>Videos 2</button></li>
+		<li><button class='buttons button-3' type='button'>Videos 3</button></li>
+		<li><button class='buttons button-4' type='button'>Videos 4</button></li>
+		<li><button class='buttons button-5' type='button'>Videos 5</button></li>
+	</ul>
+
+</nav>
+
+```
+
+
+
