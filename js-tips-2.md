@@ -145,5 +145,48 @@ The html code for our buttons could be something like this:
 
 ```
 
+And here's the corresponding CSS code for those buttons:
+
+```css
+
+		.button-group {
+			margin-top: 25px;
+			padding-top: 25px;
+			text-align: center;
+			list-style-type: none;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		.buttons {
+			text-align: center;
+			display: inline-block;
+			background-color: #3498db;
+			border: 1px solid #337fed;
+			color: #ebf5fb;
+			font-family: Arial;
+			font-size: 15px;
+			font-weight: bold;
+			padding: 6px 24px;
+			margin: 3px;
+			outline: none;
+			text-decoration: none;
+			text-shadow: 0px 1px 0px #1570cd;
+			border-radius: 4px;
+		}
+
+		.buttons:hover {
+			background-color: #5dade2;
+			color: #21618c;
+		}
+
+		.button-selected {
+			background-color: #85c1e9;
+			color: #21618c;
+		}
+
+```
 
 
