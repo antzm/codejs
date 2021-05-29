@@ -189,4 +189,56 @@ And here's the corresponding CSS code for those buttons:
 
 ```
 
+While, below is the JavaScript code for selecting the buttons:
 
+```javascript
+
+// This function adds the event listener to the buttons
+function enableListener() {
+
+	const buttonListener = document.querySelector('.button-group');
+	buttonListener.addEventListener('click', activateButtons);
+}
+
+
+// This function uses the evt parameter,
+// which is automatically transmitted whenever
+// a button is clicked
+// and depending on the evt value
+// the corresponding array for each lesson
+// is selected, the lesson button is highlighted
+// and the page content is created
+function activateButtons(evt) {
+
+	if (evt.target.classList.contains('button-1')) {
+		videoList = videos1;
+		selectButton('.button-1');
+		createContent();
+	}
+
+	if (evt.target.classList.contains('button-2')) {
+		videoList = videos2;
+		selectButton('.button-2');
+		createContent();
+	}
+
+	if (evt.target.classList.contains('button-3')) {
+		videoList = videos3;
+		selectButton('.button-3');
+		createContent();
+	}
+
+	if (evt.target.classList.contains('button-4')) {
+		videoList = videos4;
+		selectButton('.button-4');
+		createContent();
+	}
+
+	if (evt.target.classList.contains('button-5')) {
+		videoList = videos5;
+		selectButton('.button-5');
+		createContent();
+	}
+}
+
+```
