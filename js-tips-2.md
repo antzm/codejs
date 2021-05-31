@@ -262,3 +262,69 @@ function selectButton(button) {
 }
 
 ```
+
+And finally, the function to create our html content with the selected videos:
+
+```javascript
+
+function createContent() {
+
+	// First, we remove any existing headers
+	const existingHeaders = document.querySelectorAll('.video-title');
+
+	for (i = 0; i < existingHeaders.length; i++) {
+		const currentHeader = existingHeaders[i];
+		currentHeader.remove();
+	}
+
+	// We remove any existing videos
+	const existingVideos = document.querySelectorAll('.video-info');
+
+	for (i = 0; i < existingVideos.length; i++) {
+		const currentVideo = existingVideos[i];
+		currentVideo.remove();
+	}
+
+	// And we also remove the back-to-top link
+	const existingLink = document.querySelector('.back-to-top');
+	existingLink.remove();
+
+	// Then, we create a fragment to temporarily store our new html content
+	// this way, we avoid to update the document object with every iteration
+	const contentFragment = document.createDocumentFragment();
+
+	for (i = 0; i < videoList.length; i++) {
+
+		// For each video we create a header tag
+		const videoHeader = document.createElement('h1');
+		videoHeader.className = 'video-title';
+		videoHeader.innerHTML = videoList[i].slice(0, -4);
+
+		// For each video we create a video tag
+		const videoDetails = document.createElement('video');
+		videoDetails.className = 'video-info';
+		videoDetails.width = videoWidth;
+		videoDetails.height = videoHeight;
+		videoDetails.controls = true;
+		videoDetails.src = videoList[i];
+		videoDetails.setAttribute("type", "video/mp4");
+
+		// For each video we append the tags to the fragment
+		contentFragment.appendChild(videoHeader);
+		contentFragment.appendChild(videoDetails);
+	}
+
+	// We also add a back-to-top link
+	const backToTop = document.createElement('a');
+	backToTop.innerHTML = 'top of page';
+	backToTop.className = 'back-to-top';
+	backToTop.href = '#top';
+	contentFragment.appendChild(backToTop);
+
+	// And finally, we update the html page with our new content
+	const updatedContent = document.querySelector('.main-content');
+	updatedContent.appendChild(contentFragment);
+
+}
+
+```
