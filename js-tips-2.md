@@ -267,6 +267,9 @@ And finally, the function to create our html content with the selected videos:
 
 ```javascript
 
+const videoWidth = 986;  // Example width
+const videoHeight = 555; // Example height
+
 function createContent() {
 
 	// First, we remove any existing headers
@@ -328,3 +331,41 @@ function createContent() {
 }
 
 ```
+
+And this is an example of the remaing CSS code:
+
+```css
+
+	body {
+		margin: 0;
+		padding: 0;
+		background: #607d8b;
+	}
+
+
+	.main-content {
+		text-align: center;
+	}
+
+	.video-title {
+		margin-top: 36px;
+		font-family: 'Palatino Linotype', 'Times New Roman', serif;
+		color: #fff;
+	}
+
+	.video-info {
+		margin-bottom: 63px;
+		border: none;
+		outline: none;
+	}
+
+	.back-to-top {
+		display: block;
+		color: #d6eaf8;
+		font-size: 150%;
+		margin-bottom: 36px;
+		padding-bottom: 53px;
+	}
+
+```css
+
