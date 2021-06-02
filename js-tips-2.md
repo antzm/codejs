@@ -367,5 +367,33 @@ And this is an example of the remaing CSS code:
 		padding-bottom: 53px;
 	}
 
-```css
+```
 
+## Randomizing the order of the videos
+
+Using this function, we can randomize the arrays and the consquently the order of the videos:
+
+```javascript
+
+// In this approach, we remove the first item of the array
+// and then, we place back the item in a ranodm position inside the array
+// and for this process we use another function that returns
+// a random position where we will place that item,
+// and process is repaetad for every item of the array.
+function randomizeArray(randArray) {
+	let firstElement = 0;
+	for (let i = 0; i < randArray.length; i++) {
+		firstElement = randArray[0];
+		randArray.splice(0,1);
+		randArray.splice(randomNum(randArray.length), 0, firstElement);
+	};
+	return randArray;
+}
+
+// This function returns a random number between 0 and max (max included)
+function randomNum(max) {
+	let randNum = Math.floor(Math.random()*(max+1));
+	return randNum;
+}
+
+````
