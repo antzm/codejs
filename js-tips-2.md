@@ -1,5 +1,13 @@
 # Organizing local MP4 videos
 
+**Index**
+
+* [Creating a Python list with all the file names in a folder](#Creating-a-Python-list-with-all-the-file-names-in-a-folder)
+* [Creating the page content](#Creating-the-page-content) 
+* [Using several arrays in our code](#Using-several-arrays-in-our-code)
+* [Randomizing the order of the videos](#Randomizing-the-order-of-the-videos)
+
+
 There are various applications than can organize and play our locally stored MP4 videos but besides that, maybe we would like to organize them in a custom way.
 
 To easily accomplish that, we could create the neccessary HTML code and access our videos in a quick, simple and fully customizable way.
@@ -69,6 +77,8 @@ const videoList = [
 ];
 
 ```
+
+## Creating the page content
 
 So now, we can use this array and build our html page with all these videos:
 
