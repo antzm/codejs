@@ -1,6 +1,6 @@
 # Organizing local MP4 videos
 
-**Index**
+## Index
 
 * [Creating a Python list with all the file names in a folder](#Creating-a-Python-list-with-all-the-file-names-in-a-folder)
 * [Creating the page content](#Creating-the-page-content) 
@@ -78,6 +78,9 @@ const videoList = [
 
 ```
 
+[*Index*](#index)
+
+
 ## Creating the page content
 
 So now, we can use this array and build our html page with all these videos:
@@ -130,6 +133,9 @@ While our html code would be something like the following:
 </main>
 
 ```
+
+[*Index*](#index)
+
 
 ## Using several arrays in our code
 
@@ -378,6 +384,8 @@ And this is an example of the remaing CSS code:
 	}
 
 ```
+[*Index*](#index)
+
 
 ## Randomizing the order of the videos
 
@@ -407,3 +415,6 @@ function randomNum(max) {
 }
 
 ````
+
+[*Index*](#index)
+
